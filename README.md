@@ -2,7 +2,7 @@
 
 * Library **pytelegrambotapi** was used in making of this bot.
 
-* User required to message bot in format: <name of currency, price of which user wants to know> <name of currency in which, price of first currency is shown> <amount of first currency>.
+* User required to message bot in format: < name of currency, price of which user wants to know > < name of currency in which, price of first currency is shown > < amount of first currency >.
 
 * If user enters commands **/start** or **/help** instructions on how to use the bot are shown.
 
