@@ -1,16 +1,10 @@
 import telebot
 import textwrap
+from config import currency, TOKEN
+from extensions import ConvertException, CurrencyConverter
 
-
-TOKEN = '1790745719:AAGZLxODapseLEFX-tI0yorGS2GjIEEoccY'
 
 bot = telebot.TeleBot(TOKEN)
-
-currency = {
-    'доллар,': 'USD',
-    'евро,': 'EUR',
-    'рубль': 'RUB'
-}
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -37,6 +31,28 @@ def values(message: telebot.types.Message):
     for key in currency.keys():
         text = ' '.join((text, key, ))
     bot.reply_to(message, text)
+
+
+@bot.message_handler(content_types=['text', ])
+def convert(message: telebot.types.Message):
+    try:
+        user_input = message.text.split(' ')
+
+        if len(user_input) != 3:
+            raise ConvertException('Неправильное количество параметров')
+
+        quote, base, amount = user_input
+        sample = CurrencyConverter.get_price(quote, base, amount)
+
+    except ConvertException as e:
+        bot.reply_to(message, f'Ошибка пользователя\n{e}')
+
+    except Exception as e:
+        bot.reply_to(message, f'Не удалось обработать комманду\n{e}')
+
+    else:
+        text = f'Цена {amount} {quote} в {base} - {sample}'
+        bot.send_message(message.chat.id, text)
 
 
 bot.polling()
