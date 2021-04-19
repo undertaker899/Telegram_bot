@@ -1,7 +1,7 @@
-TOKEN = '1790745719:AAGZLxODapseLEFX-tI0yorGS2GjIEEoccY'
+TOKEN = ''
 
 currency = {
-    'доллар': 'USD',
-    'евро': 'EUR',
-    'рубль': 'RUB'
+    'Dollar': 'USD',
+    'Euro': 'EUR',
+    'Ruble': 'RUB'
 }
