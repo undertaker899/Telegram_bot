@@ -52,7 +52,7 @@ def convert(message: telebot.types.Message):
 
     else:
         text = f'Price of {amount} {quote} in {base} = {sample}'
-        bot.send_message(message.chat.id, text)
+        bot.send_message(message.chat.id, text.lower())
 
 
 bot.polling()

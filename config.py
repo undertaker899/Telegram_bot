@@ -1,7 +1,7 @@
 TOKEN = ''
 
 currency = {
-    'Dollar': 'USD',
-    'Euro': 'EUR',
-    'Ruble': 'RUB'
+    'dollar': 'USD',
+    'euro': 'EUR',
+    'ruble': 'RUB'
 }
