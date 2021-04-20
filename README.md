@@ -4,7 +4,7 @@
 
 * User required to message bot in format (2 keywords and a number, with whitespace between each)
 
-* For example: USD RUB 1500
+* For example: dollar ruble 1500
 
 * If user enters commands **/start** or **/help** instructions on how to use the bot are shown.
 
